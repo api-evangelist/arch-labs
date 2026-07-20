@@ -1,0 +1,27 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/arch-labs-client-api-openapi.json
+docs: https://arch.co/client-api/api-docs/
+summary:
+  types:
+  - http
+  http_schemes:
+  - bearer
+  token_grant: client-credentials
+description: >-
+  The Arch Client API uses JWT bearer-token authentication. Credentials (a Client ID and Client Secret)
+  are requested from Arch at api-support@arch.co. Clients exchange those for an access token via a POST
+  to /client-api/v0/auth/token with a JSON body {clientId, clientSecret}. The returned JWT is sent on
+  subsequent requests as `authorization: Bearer <token>` and should be stored and reused until it
+  expires (the exp claim in the decoded JWT is the Unix-epoch expiry). All other endpoints require the
+  BearerAuth scheme.
+token_endpoint: POST https://arch.co/client-api/v0/auth/token
+token_format: JWT
+header: 'authorization: Bearer <access_token>'
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  sources:
+  - openapi/arch-labs-client-api-openapi.json
