@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  openapi/arch-labs-client-api-openapi.json (version + path scheme) and the Arch site (status page,
+  security/trust pages). Arch does not publish a formal versioning or deprecation policy; what is
+  documented is captured below.
+versioning:
+  scheme: uri-path
+  current: v0
+  spec_version: 0.1.0
+  docs: https://arch.co/client-api/api-docs/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No published deprecation policy or RFC 8594 Sunset/Deprecation header support. The OpenAPI marks
+    PATCH /client-api/v0/activities/{id} as not yet implemented (returns 405).
+sla:
+  url: null
+  uptime_target: null
+status_page: https://arch-group.gitlab.io/status-page/
+deprecated_operations: []
+not_yet_implemented:
+- 'PATCH /client-api/v0/activities/{id}'

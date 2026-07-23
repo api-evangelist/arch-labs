@@ -1,0 +1,26 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Arch Client API
+  version: 1.0.0
+extends: openapi/arch-labs-client-api-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: '2026-07-18'
+    x-apievangelist-provider: arch-labs
+    x-apievangelist-notes: >-
+      Captured from the Swagger UI spec embedded at https://arch.co/client-api/api-docs/. Auth is a JWT
+      bearer minted at /client-api/v0/auth/token from client credentials; rate limits use IETF RateLimit-*
+      headers; list endpoints paginate as "Pages" (default 25, max 1000).
+- target: $.servers
+  update:
+  - url: https://arch.co/client-api/v0
+    description: Production Arch Client API base URL (the harvested spec declares servers[].url as "/").
+- target: $.info
+  update:
+    x-apievangelist-artifacts:
+      authentication: authentication/arch-labs-authentication.yml
+      conventions: conventions/arch-labs-conventions.yml
+      errors: errors/arch-labs-problem-types.yml
+      data_model: data-model/arch-labs-data-model.yml
+      lifecycle: lifecycle/arch-labs-lifecycle.yml

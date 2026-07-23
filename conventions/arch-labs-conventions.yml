@@ -1,0 +1,56 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://arch.co/client-api/api-docs/ — the cross-cutting request/response conventions documented in
+  the Arch Client API "Getting Started", "Rate Limit", "Pages" and "Standards" sections, plus what the
+  OpenAPI implies. These are the developer-experience / runtime-semantics conventions that apply across
+  every endpoint.
+base_url: https://arch.co/client-api/v0
+api_style: REST over HTTPS, JSON request/response
+authentication:
+  scheme: JWT bearer token (BearerAuth)
+  token_endpoint: POST /client-api/v0/auth/token with {clientId, clientSecret}
+  header: 'authorization: Bearer <access_token>'
+  reuse: Store and reuse the token until the JWT `exp` claim; credentials requested at api-support@arch.co.
+  docs: https://arch.co/client-api/api-docs/
+  detail: authentication/arch-labs-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    Arch does not document an idempotency-key mechanism for its write endpoints. Uniqueness is enforced
+    server-side for some resources (e.g. creating a user with an existing email returns 409 Conflict).
+pagination:
+  style: page (Arch "Pages")
+  default_page_size: 25
+  max_page_size: 1000
+  note: Many Arch objects are returned in lists called Pages; some endpoints allow raising the page size up to 1000.
+  docs: https://arch.co/client-api/api-docs/
+rate_limiting:
+  supported: true
+  measure: requests per minute
+  over_limit_status: 429
+  standard: IETF draft RateLimit header fields
+  response_headers:
+  - name: RateLimit-Policy
+    meaning: Max requests over a window. Format "[requests];w=[window seconds]".
+  - name: RateLimit-Limit
+    meaning: Max requests allowed over the current window.
+  - name: RateLimit-Remaining
+    meaning: Requests remaining in the current window.
+  - name: RateLimit-Reset
+    meaning: Seconds until the current window resets.
+  docs: https://arch.co/client-api/api-docs/
+error_envelope:
+  json: '{"message": "<reason>"}'
+  json_field_errors: '{"<field>": "<message>"}'
+  text: text/plain reason string on some endpoints
+  format: arch-error-object (not RFC 9457)
+  detail: errors/arch-labs-problem-types.yml
+versioning:
+  scheme: uri-path
+  current: v0
+  note: The API version is carried in the path (/client-api/v0/...); the OpenAPI info.version is 0.1.0.
+standards:
+  time_zone: Dates and times are in UTC unless otherwise specified.
+  premium_features: Lookthroughs (schedule of investments) is a premium feature.
+  permissions: Access is governed by user roles (Full Access, Tax Only, View Only, etc.).

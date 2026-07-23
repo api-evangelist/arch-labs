@@ -1,0 +1,55 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  Derived from the schema $ref links and *Ref reference fields in
+  openapi/arch-labs-client-api-openapi.json (Holding, Activity, CashFlow, Task, TaxDocument and the
+  Investing/Issuing Entity graph), and the Concepts section of the Arch Client API documentation
+  (arch.co/client-api/api-docs/).
+docs: https://arch.co/client-api/api-docs/
+notation: >-
+  relationships use has_one / has_many / belongs_to with the reference field name; direction is from the
+  entity that owns the reference. Arch's core model: a Holding is a relationship between an Investing
+  Entity (owner) and an Issuing Entity (issuer) via one of the Issuing Entity's Offerings.
+entities:
+- {name: User, domain: identity, description: An individual's personal access to Arch.}
+- {name: Account, domain: identity, description: A collection of investments that users are assigned to.}
+- {name: InvestingEntity, domain: core, description: The entity that owns holdings; Arch processes investments on its behalf.}
+- {name: IssuingEntity, domain: core, description: The entity that issues holdings (PE fund, hedge fund, bank), issuing documents/updates.}
+- {name: Offering, domain: core, description: A specific investing opportunity an Issuing Entity offers (e.g. Seed, Series A).}
+- {name: Holding, domain: core, description: An investment or property representing an Investing Entity's stake in an Offering.}
+- {name: Activity, domain: activity, description: A processed document/update about an investment (statement, capital call, distribution, investor letter).}
+- {name: CashFlow, domain: activity, description: Money flowing into/out of an investment, composed of one or more allocations.}
+- {name: CashFlowAllocation, domain: activity, description: A specific money movement within a cash flow, with a direction (-1 in, 1 out, 0 none).}
+- {name: Task, domain: workflow, description: An investment-related action a user must complete (confirm investment, verify wire instructions).}
+- {name: Comment, domain: workflow, description: A comment thread attached to a task.}
+- {name: TaxDocument, domain: tax, description: A tax document collected and delivered for a holding/entity.}
+- {name: Firm, domain: reference, description: Reference information about a firm.}
+- {name: Lookthrough, domain: premium, description: The schedule of investments (SOI) underlying a holding (premium feature).}
+- {name: UserRole, domain: identity, description: A grant of permissions to a user over accounts, investing entities, and holdings.}
+- {name: AddeparExportResult, domain: integration, description: An Addepar-formatted export of the user's Arch data.}
+relationships:
+- {from: Account, to: User, kind: has_many, via: users}
+- {from: InvestingEntity, to: Holding, kind: has_many, via: investingEntityRef}
+- {from: IssuingEntity, to: Offering, kind: has_many, via: issuingEntityRef}
+- {from: IssuingEntity, to: Holding, kind: has_many, via: underlyingLookthroughs}
+- {from: Holding, to: InvestingEntity, kind: belongs_to, via: investingEntityRef}
+- {from: Holding, to: IssuingEntity, kind: belongs_to, via: issuingEntityRef}
+- {from: Holding, to: Offering, kind: belongs_to, via: offeringRef}
+- {from: Holding, to: Account, kind: belongs_to, via: accountRef}
+- {from: Holding, to: Firm, kind: belongs_to, via: firmRef}
+- {from: Holding, to: Lookthrough, kind: has_many, via: lookthroughs}
+- {from: Activity, to: Holding, kind: belongs_to, via: holdingRef}
+- {from: Activity, to: InvestingEntity, kind: belongs_to, via: investingEntityRef}
+- {from: Activity, to: IssuingEntity, kind: belongs_to, via: issuingEntityRef}
+- {from: Activity, to: Account, kind: belongs_to, via: accountRef}
+- {from: Activity, to: Task, kind: has_one, via: taskRef}
+- {from: Activity, to: TaxDocument, kind: has_one, via: taxDocRef}
+- {from: Activity, to: CashFlow, kind: has_one, via: cashFlowRef}
+- {from: CashFlow, to: CashFlowAllocation, kind: has_many, via: allocations}
+- {from: Task, to: Activity, kind: belongs_to, via: activityRef}
+- {from: Task, to: Comment, kind: has_many, via: comments}
+- {from: TaxDocument, to: Holding, kind: belongs_to, via: holdingRef}
+- {from: TaxDocument, to: InvestingEntity, kind: belongs_to, via: investingEntityRef}
+- {from: TaxDocument, to: IssuingEntity, kind: belongs_to, via: issuingEntityRef}
+- {from: TaxDocument, to: Account, kind: belongs_to, via: accountRef}
+- {from: UserRole, to: User, kind: belongs_to, via: userRef}

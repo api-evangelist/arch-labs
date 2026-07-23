@@ -1,0 +1,48 @@
+generated: '2026-07-18'
+method: derived
+format: arch-error-object
+source: >-
+  Derived from the 4xx/5xx responses across openapi/arch-labs-client-api-openapi.json. Arch does NOT use
+  RFC 9457 application/problem+json. JSON error responses use a simple envelope {"message": "..."} (and,
+  for some validation errors, an object map of field -> message); many endpoints return the error text as
+  text/plain. Titles/remediation below are summarized from the response descriptions in the spec.
+envelope:
+  json: '{"message": "<human-readable reason>"}'
+  json_field_errors: '{"<field>": "<message>", ...}'
+  text: 'plain-text reason string (Content-Type: text/plain)'
+problems:
+- status: 400
+  title: Bad Request
+  meaning: Malformed request body, unparseable id, missing required field, or invalid parameters.
+  remediation: Validate the request body/params against the schema (e.g. supply required fields such as email); ensure path ids are well-formed.
+  content: [application/json, text/plain]
+- status: 401
+  title: Unauthorized
+  meaning: Missing or invalid credentials at the token endpoint (bad clientId/clientSecret) or an expired/absent bearer token.
+  remediation: 'Re-authenticate at POST /client-api/v0/auth/token and send a valid `authorization: Bearer <token>` header.'
+  content: [text/plain]
+- status: 403
+  title: Forbidden
+  meaning: The caller's user role lacks permission for the resource/action (e.g. CommentsRead permission required; not authorized to view a firm; no permission to invite to some accounts).
+  remediation: Verify the API user's role grants the required permission; see Arch Permissions by User Type.
+  content: [application/json, text/plain]
+- status: 404
+  title: Not Found
+  meaning: The referenced object does not exist or is inaccessible to the user (holding, account, task, user, offering, tax document, activity file, Addepar exports).
+  remediation: Confirm the id exists and is within the authenticated user's access scope.
+  content: [application/text, text/plain]
+- status: 405
+  title: Method Not Allowed / Not Implemented
+  meaning: The endpoint is not yet implemented (e.g. PATCH /activities/{id}).
+  remediation: Do not call endpoints documented as not yet implemented.
+  content: []
+- status: 409
+  title: Conflict
+  meaning: The resource already exists or a precondition conflicts (user with this email already exists; some user roles already exist; some user roles don't exist yet).
+  remediation: Fetch the existing resource before creating; reconcile role state before POST/DELETE on /user-roles.
+  content: [application/json]
+- status: 500
+  title: Internal Server Error
+  meaning: An unexpected server-side error (e.g. error updating/completing a task).
+  remediation: Retry with backoff; if persistent, contact api-support@arch.co.
+  content: [text/plain]

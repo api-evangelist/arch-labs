@@ -1,0 +1,13 @@
+generated: '2026-07-18'
+method: searched
+host: https://arch.co
+note: >-
+  Probed the standard /.well-known/ discovery surface on the Arch API/website host. None are published
+  (all 404 as of 2026-07-18) — recorded as honest negative results; no WellKnown catalog pointer is
+  emitted because there is no catalog to point to.
+documents:
+- {path: /.well-known/security.txt, status: 404}
+- {path: /.well-known/openid-configuration, status: 404}
+- {path: /.well-known/oauth-authorization-server, status: 404}
+- {path: /.well-known/api-catalog, status: 404}
+- {path: /.well-known/ai-plugin.json, status: 404}

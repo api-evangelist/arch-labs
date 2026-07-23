@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: searched
+probe: true
+url: https://trust.arch.co/
+source: https://arch.co/security.html
+certifications:
+- SOC 2
+controls:
+- AES-256 encryption at rest
+- TLS 1.2+ encryption in transit
+- Multi-factor authentication (MFA)
+- Single Sign-On (SSO) for federated identity
+- Audit logging with automated alerts
+- Regular encrypted backups with point-in-time recovery
+- Real-time system monitoring
+- Industry-standard password hashing and salting
+infrastructure: Hosted on AWS.
+summary: >-
+  Arch operates a public Trust Center at trust.arch.co and a security overview at arch.co/security.html.
+  Data is protected with AES-256 at rest and TLS 1.2+ in transit; security controls are validated through
+  third-party audits including SOC 2 certification. The platform supports MFA and SSO, audit logging,
+  encrypted backups with point-in-time recovery, and real-time monitoring.
+evidence:
+- {source: https://arch.co/security.html, keywords: [soc 2, aes-256, tls 1.2, trust center]}
+- {source: https://trust.arch.co/, keywords: [trust center]}

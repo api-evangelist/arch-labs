@@ -1,0 +1,42 @@
+{
+  "provider": "arch-labs",
+  "sources": [
+    "arch-labs-accounts-api-openapi.yml",
+    "arch-labs-activities-api-openapi.yml",
+    "arch-labs-addepar-api-openapi.yml",
+    "arch-labs-authentication-api-openapi.yml",
+    "arch-labs-cash-flows-api-openapi.yml",
+    "arch-labs-firms-api-openapi.yml",
+    "arch-labs-holdings-api-openapi.yml",
+    "arch-labs-investing-entities-api-openapi.yml",
+    "arch-labs-issuing-entities-api-openapi.yml",
+    "arch-labs-lookthroughs-api-openapi.yml",
+    "arch-labs-offerings-api-openapi.yml",
+    "arch-labs-tasks-api-openapi.yml",
+    "arch-labs-tax-documents-api-openapi.yml",
+    "arch-labs-user-roles-api-openapi.yml",
+    "arch-labs-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "arch-labs-accounts-api-openapi.yml",
+    "arch-labs-activities-api-openapi.yml",
+    "arch-labs-addepar-api-openapi.yml",
+    "arch-labs-authentication-api-openapi.yml",
+    "arch-labs-cash-flows-api-openapi.yml",
+    "arch-labs-firms-api-openapi.yml",
+    "arch-labs-holdings-api-openapi.yml",
+    "arch-labs-investing-entities-api-openapi.yml",
+    "arch-labs-issuing-entities-api-openapi.yml",
+    "arch-labs-lookthroughs-api-openapi.yml",
+    "arch-labs-offerings-api-openapi.yml",
+    "arch-labs-tasks-api-openapi.yml",
+    "arch-labs-tax-documents-api-openapi.yml",
+    "arch-labs-user-roles-api-openapi.yml",
+    "arch-labs-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

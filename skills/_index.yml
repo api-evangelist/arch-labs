@@ -1,0 +1,18 @@
+generated: '2026-07-18'
+method: generated
+source: >-
+  Generated from real operationIds in openapi/arch-labs-client-api-openapi.json plus the conventions and
+  error rules captured in conventions/ and errors/. No provider-published skills/AGENTS.md exist.
+skills:
+- file: arch-labs-ingest-fund-investment.md
+  name: Ingest a new fund investment into Arch
+  api: openapi/arch-labs-client-api-openapi.json
+  operations: [create-funds-holding, post-holding-statement-upload, post-holding-cashflow-upload, get-list-holding-file-types]
+- file: arch-labs-collect-tax-documents.md
+  name: Collect tax documents from Arch
+  api: openapi/arch-labs-client-api-openapi.json
+  operations: [get-list-tax-documents, get-tax-document-by-id, get-tax-document-list-files, get-tax-document-download-file]
+- file: arch-labs-track-investment-activity.md
+  name: Track investment activity in Arch
+  api: openapi/arch-labs-client-api-openapi.json
+  operations: [get-list-activities, get-single-activity, get-list-activity-files, get-activity-download-single-file]

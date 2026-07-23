@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  Derived from openapi/arch-labs-client-api-openapi.json (securitySchemes, error responses, pagination
+  and rate-limit conventions) and Arch's published security/compliance posture
+  (arch.co/security.html, trust.arch.co).
+standards:
+- id: http-bearer-jwt-auth
+  conforms: true
+  evidence: openapi securityScheme BearerAuth is http bearer with bearerFormat JWT; token issued at /auth/token from client credentials.
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 securityScheme; authentication is a JWT bearer minted from a client-id/secret exchange.
+- id: oidc
+  conforms: false
+  evidence: No /.well-known/openid-configuration on arch.co (404); no OIDC discovery.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a simple {"message"} envelope or text/plain, not application/problem+json.
+- id: ietf-ratelimit-headers
+  conforms: true
+  evidence: Responses carry RateLimit-Policy / RateLimit-Limit / RateLimit-Remaining / RateLimit-Reset headers (IETF draft), 429 over limit.
+- id: pagination
+  conforms: true
+  evidence: List endpoints return "Pages" (default 25, up to 1000).
+- id: soc2
+  conforms: true
+  evidence: Arch advertises SOC 2 certified security controls validated by third-party audits (arch.co/security.html, trust.arch.co).
+- id: tls
+  conforms: true
+  evidence: TLS 1.2+ in transit; live probe of arch.co negotiated TLSv1.3 with HSTS (max-age 31536000).
+- id: encryption-at-rest
+  conforms: true
+  evidence: AES-256 encryption at rest (arch.co/security.html).

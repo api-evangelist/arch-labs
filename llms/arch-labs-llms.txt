@@ -1,0 +1,28 @@
+# Arch (Arch Labs, Inc.)
+
+> Arch is a private-markets infrastructure platform that centralizes the administration of alternative investments — collecting and classifying investment documents, parsing account statements and cash flows, automating capital-call and distribution workflows, tracking tax documents, and producing standardized portfolio views for investors, wealth managers, family offices, institutional allocators, CPAs and fund managers. The Arch Client API is a JWT-authenticated REST API over holdings, entities, activities, cash flows, tasks, tax documents and Addepar exports.
+
+## APIs
+- [Arch Client API docs](https://arch.co/client-api/api-docs/): REST API; base URL https://arch.co/client-api/v0; JWT bearer auth via POST /client-api/v0/auth/token.
+
+## Specs
+- [OpenAPI 3.0 (Arch Client API)](https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/openapi/arch-labs-client-api-openapi.json)
+- [OpenAPI Overlay (API Evangelist enhancements)](https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/overlays/arch-labs-client-api-overlay.yaml)
+
+## Artifacts
+- [Authentication profile](https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/authentication/arch-labs-authentication.yml)
+- [API conventions (pagination, rate limits, errors)](https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/conventions/arch-labs-conventions.yml)
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/errors/arch-labs-problem-types.yml)
+- [Data model / ERD](https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/data-model/arch-labs-data-model.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/lifecycle/arch-labs-lifecycle.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/conformance/arch-labs-conformance.yml)
+- [MCP candidate tools](https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/mcp/arch-labs-mcp.yml)
+- [Agent Skills index](https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/skills/_index.yml)
+
+## Docs
+- [Getting started & auth](https://arch.co/client-api/api-docs/)
+- [Security](https://arch.co/security.html)
+- [Trust Center](https://trust.arch.co/)
+- [Vulnerability disclosure](https://arch.co/vulnerabilitydisclosure.html)
+- [Status page](https://arch-group.gitlab.io/status-page/)
+- [Terms of use](https://arch.co/legal.html)

@@ -1,8 +1,28 @@
 aid: arch-labs
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/arch-labs.png
 name: Arch Labs
-description: 'Arch Labs is a company surfaced as a portfolio company of craft-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: fintech. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Arch (Arch Labs, Inc.) is a private-markets infrastructure platform that centralizes the administration
+  of alternative investments for individual investors, wealth managers, family offices, institutional
+  allocators, CPAs, fund managers and their advisors. Acting as a "portal of portals," Arch collects and
+  classifies investment correspondence, parses account statements and cash flows, automates capital-call
+  and distribution workflows, tracks tax-document deadlines, and produces standardized portfolio views
+  and AI-generated manager-update summaries across private credit, real estate, venture capital, hedge
+  funds and private equity. Its Client API exposes holdings, investing/issuing entities, activities,
+  cash flows, tasks, tax documents, user roles and Addepar exports, and it integrates with Addepar,
+  Salesforce and Bipsync. Backed by Craft Ventures, Menlo Ventures, Oak HC/FT and others.
 url: https://raw.githubusercontent.com/api-evangelist/arch-labs/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +32,437 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Fintech
-apis: []
+- Alternative Investments
+- Private Markets
+- Wealth Management
+- Investment Management
+- Financial Services
+- Data Aggregation
+apis:
+- aid: arch-labs:arch-labs-accounts-api
+  name: Arch Labs Accounts API
+  description: The Accounts API from Arch Labs — 2 operation(s) for accounts.
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-activities-api
+  name: Arch Labs Activities API
+  description: Interact with Arch objects representing financial updates
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Activities
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-activities-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-addepar-api
+  name: Arch Labs Addepar API
+  description: The Addepar API from Arch Labs — 1 operation(s) for addepar.
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Addepar
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-addepar-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-authentication-api
+  name: Arch Labs Authentication API
+  description: The Authentication API from Arch Labs — 1 operation(s) for authentication.
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-cash-flows-api
+  name: Arch Labs Cash Flows API
+  description: Read and write data relating to money inflow / outflow
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Cash Flows
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-cash-flows-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-firms-api
+  name: Arch Labs Firms API
+  description: Reference info about firms.
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Firms
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-firms-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-holdings-api
+  name: Arch Labs Holdings API
+  description: Read holding data and push new investments.
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Holdings
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-holdings-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-investing-entities-api
+  name: Arch Labs Investing Entities API
+  description: Read from and create new investing entities
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Investing Entities
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-investing-entities-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-issuing-entities-api
+  name: Arch Labs Issuing Entities API
+  description: Read from and create new issuing entities
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Issuing Entities
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-issuing-entities-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-lookthroughs-api
+  name: Arch Labs Lookthroughs API
+  description: Fetch data relating to the underling investments made by your own investments
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Lookthroughs
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-lookthroughs-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-offerings-api
+  name: Arch Labs Offerings API
+  description: Get data on individual investment offering opportunities offered by your holdings
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Offerings
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-offerings-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-tasks-api
+  name: Arch Labs Tasks API
+  description: The Tasks API from Arch Labs — 6 operation(s) for tasks.
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-tax-documents-api
+  name: Arch Labs Tax Documents API
+  description: The Tax Documents API from Arch Labs — 4 operation(s) for tax documents.
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Tax Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-tax-documents-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-user-roles-api
+  name: Arch Labs User Roles API
+  description: The User Roles API from Arch Labs — 1 operation(s) for user roles.
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - User Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-user-roles-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
+- aid: arch-labs:arch-labs-users-api
+  name: Arch Labs Users API
+  description: The Users API from Arch Labs — 2 operation(s) for users.
+  humanURL: https://arch.co/client-api/api-docs/
+  baseURL: https://arch.co/client-api/v0
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/arch-labs-users-api-openapi.yml
+  - type: Documentation
+    url: https://arch.co/client-api/api-docs/
+  - type: APIReference
+    url: https://arch.co/client-api/api-docs/
+  - type: Authentication
+    url: authentication/arch-labs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/arch-labs-problem-types.yml
+  - type: Conventions
+    url: conventions/arch-labs-conventions.yml
+  - type: DataModel
+    url: data-model/arch-labs-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/arch-labs-lifecycle.yml
+  - type: RateLimits
+    url: conventions/arch-labs-conventions.yml
+  - type: LLMsTxt
+    url: llms/arch-labs-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,4 +470,47 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://archlabs.com
+  url: https://arch.co
+- type: DeveloperPortal
+  url: https://arch.co/client-api/api-docs/
+- type: Documentation
+  url: https://arch.co/client-api/api-docs/
+- type: APIReference
+  url: https://arch.co/client-api/api-docs/
+- type: GettingStarted
+  url: https://arch.co/client-api/api-docs/
+- type: Authentication
+  url: authentication/arch-labs-authentication.yml
+- type: Support
+  url: https://arch.co/contact.html
+- type: SignUp
+  url: https://arch.co/portal
+- type: Login
+  url: https://arch.co/portal
+- type: TermsOfService
+  url: https://arch.co/legal.html
+- type: PrivacyPolicy
+  url: https://arch.co/legal.html#privacy-policy
+- type: StatusPage
+  url: https://arch-group.gitlab.io/status-page/
+- type: Security
+  url: https://arch.co/vulnerabilitydisclosure.html
+- type: VulnerabilityDisclosure
+  url: security/arch-labs-vulnerability-disclosure.yml
+- type: TrustCenter
+  url: https://trust.arch.co/
+- type: Compliance
+  url: https://arch.co/security.html
+- type: DomainSecurity
+  url: security/arch-labs-domain-security.yml
+- type: Conformance
+  url: conformance/arch-labs-conformance.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/archsoftware/
+- type: Twitter
+  url: https://twitter.com/gotk1s
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
