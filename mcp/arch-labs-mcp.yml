@@ -6,7 +6,7 @@ source: Derived from operations in openapi/arch-labs-client-api-openapi.json. Ar
 server:
   name: arch
   transport: http
-  note: "candidate \u2014 no hosted Arch MCP server is published as of 2026-07-18"
+  note: candidate — no hosted Arch MCP server is published as of 2026-07-18
 tools:
 - name: get_accounts
   description: Get all accounts for caller
@@ -164,3 +164,9 @@ tools:
 - name: post_auth_token
   description: Authenticate using client credentials
   source_operation: openapi/arch-labs-client-api-openapi.json#post /client-api/v0/auth/token
+deployment:
+  mode: none
+  verified: derived
+  tools: 52
+  checked: '2026-08-12'
+  source: catalog MCP census
