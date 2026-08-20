@@ -40,6 +40,15 @@ tags:
 - Private Markets
 - Wealth Management
 - Investment Management
+- Financial-Services
+- Data Aggregation
+tags_raw:
+- Company
+- Fintech
+- Alternative Investments
+- Private Markets
+- Wealth Management
+- Investment Management
 - Financial Services
 - Data Aggregation
 apis:
@@ -49,6 +58,8 @@ apis:
   humanURL: https://arch.co/client-api/api-docs/
   baseURL: https://arch.co/client-api/v0
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -357,6 +368,8 @@ apis:
   humanURL: https://arch.co/client-api/api-docs/
   baseURL: https://arch.co/client-api/v0
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
@@ -441,6 +454,8 @@ apis:
   humanURL: https://arch.co/client-api/api-docs/
   baseURL: https://arch.co/client-api/v0
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
